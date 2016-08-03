@@ -15,21 +15,22 @@ public class Album {
     @GenericGenerator(name="randomId", strategy="org.cloudfoundry.samples.music.domain.RandomIdGenerator")
     private String id;
 
-    private String title;
-    private String artist;
+    private String sector;
+    private String name;
     private String releaseYear;
-    private String genre;
-    private int trackCount;
+    private String rating;
+    private int loanCount;
     private String albumId;
 
     public Album() {
     }
 
-    public Album(String title, String artist, String releaseYear, String genre) {
-        this.title = title;
-        this.artist = artist;
+    public Album(String sector, String name, String releaseYear, String rating) {
+        this.sector = sector;
+        this.name = name;
         this.releaseYear = releaseYear;
-        this.genre = genre;
+        this.rating = rating;
+        this.loanCount = 8;
     }
 
     public String getId() {
@@ -40,20 +41,20 @@ public class Album {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSector() {
+        return sector;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSector(String sector) {
+        this.sector = sector;
     }
 
-    public String getArtist() {
-        return artist;
+    public String getName() {
+        return name;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getReleaseYear() {
@@ -64,20 +65,20 @@ public class Album {
         this.releaseYear = releaseYear;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getRating() {
+        return rating;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
-    public int getTrackCount() {
-        return trackCount;
+    public int getLoanCount() {
+        return loanCount;
     }
 
-    public void setTrackCount(int trackCount) {
-        this.trackCount = trackCount;
+    public void setLoanCount(int loanCount) {
+        this.loanCount = loanCount;
     }
 
     public String getAlbumId() {

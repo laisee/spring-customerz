@@ -39,11 +39,11 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
     function saveAlbum(album) {
         Albums.save(album,
             function () {
-                Status.success("Album saved");
+                Status.success("Customer saved");
                 list();
             },
             function (result) {
-                Status.error("Error saving album: " + result.status);
+                Status.error("Error saving customer: " + result.status);
             }
         );
     }
@@ -89,11 +89,11 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
     $scope.deleteAlbum = function (album) {
         Album.delete({id: album.id},
             function () {
-                Status.success("Album deleted");
+                Status.success("Customer deleted");
                 list();
             },
             function (result) {
-                Status.error("Error deleting album: " + result.status);
+                Status.error("Error deleting customer: " + result.status);
             }
         );
     };
@@ -147,11 +147,11 @@ function AlbumEditorController($scope, Albums, Status, EditorStatus) {
 
         Albums.save({}, album,
             function () {
-                Status.success("Album saved");
+                Status.success("Customer saved");
                 list();
             },
             function (result) {
-                Status.error("Error saving album: " + result.status);
+                Status.error("Error saving customer: " + result.status);
             }
         );
 

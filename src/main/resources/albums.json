@@ -1,205 +1,234 @@
 [
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Nirvana",
-        "title": "Nevermind",
+        "name": "Nirvana Inc",
+        "sector": "Music",
         "releaseYear": "1991",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Beach Boys",
-        "title": "Pet Sounds",
+        "name": "The Beach Boys Inc",
+        "sector": "Energy",
         "releaseYear": "1966",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Marvin Gaye",
-        "title": "What's Going On",
+        "name": "Marvin Gaye Inc",
+        "sector": "Oil",
         "releaseYear": "1971",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Jimi Hendrix Experience",
-        "title": "Are You Experienced?",
+        "name": "Jimi Hendrix Experience Inc",
+        "sector": "Oil",
         "releaseYear": "1967",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "U2",
-        "title": "The Joshua Tree",
+        "name": "U2 Inc",
+        "sector": "Beer",
         "releaseYear": "1987",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Beatles",
-        "title": "Abbey Road",
+        "name": "The Beatles Inc",
+        "sector": "Energy",
         "releaseYear": "1969",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Fleetwood Mac",
-        "title": "Rumours",
+        "name": "Fleetwood Mac Inc",
+        "sector": "Food",
         "releaseYear": "1977",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Elvis Presley",
-        "title": "Sun Sessions",
+        "name": "Elvis Presley Inc",
+        "sector": "Oil",
         "releaseYear": "1976",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Michael Jackson",
-        "title": "Thriller",
+        "name": "Michael Jackson Inc",
+        "sector": "Transport",
         "releaseYear": "1982",
-        "genre": "Pop"
+        "rating": "DDD",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Rolling Stones",
-        "title": "Exile on Main Street",
+        "name": "The Rolling Stones Inc",
+        "sector": "Education",
         "releaseYear": "1972",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 55
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Bruce Springsteen",
-        "title": "Born to Run",
+        "name": "Bruce Springsteen Inc",
+        "sector": "Manufacturing",
         "releaseYear": "1975",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 6
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Clash",
-        "title": "London Calling",
+        "name": "The Clash Inc",
+        "sector": "Clothes",
         "releaseYear": "1980",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 3
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Eagles",
-        "title": "Hotel California",
+        "name": "The Eagles Inc",
+        "sector": "Aviation",
         "releaseYear": "1976",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 5
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Led Zeppelin",
-        "title": "Led Zeppelin",
+        "name": "Led Zeppelin Inc",
+        "sector": "Aviation",
         "releaseYear": "1969",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Led Zeppelin",
-        "title": "IV",
+        "name": "Led Zeppelin Inc",
+        "sector": "Aviation",
         "releaseYear": "1971",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 11
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Police",
-        "title": "Synchronicity",
+        "name": "Police Inc",
+        "sector": "Services",
         "releaseYear": "1983",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 8
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "U2",
-        "title": "Achtung Baby",
+        "name": "U2 Inc",
+        "sector": "Security",
         "releaseYear": "1991",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 2
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Rolling Stones",
-        "title": "Let it Bleed",
+        "name": "The Rolling Stones Inc",
+        "sector": "Medical",
         "releaseYear": "1969",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Beatles",
-        "title": "Rubber Soul",
+        "name": "The Beatles Inc",
+        "sector": "Services",
         "releaseYear": "1965",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Ramones",
-        "title": "The Ramones",
+        "name": "The Ramones Inc",
+        "sector": "Chemicals",
         "releaseYear": "1976",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Queen",
-        "title": "A Night At The Opera",
+        "name": "Queen Inc",
+        "sector": "Fashion",
         "releaseYear": "1975",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Boston",
-        "title": "Don't Look Back",
+        "name": "Boston Inc",
+        "sector": "Nothing",
         "releaseYear": "1978",
-        "genre": "Rock"
+        "rating": "BBB",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "BB King",
-        "title": "Singin' The Blues",
+        "name": "BB King Inc",
+        "sector": "Blues",
         "releaseYear": "1956",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Albert King",
-        "title": "Born Under A Bad Sign",
+        "name": "Albert King Inc",
+        "sector": "Entertainment",
         "releaseYear": "1967",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Muddy Waters",
-        "title": "Folk Singer",
+        "name": "Muddy Waters Inc",
+        "sector": "Music",
         "releaseYear": "1964",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "The Fabulous Thunderbirds",
-        "title": "Rock With Me",
+        "name": "The Fabulous Thunderbirds Inc",
+        "sector": "Minerals",
         "releaseYear": "1979",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Robert Johnson",
-        "title": "King of the Delta Blues",
+        "name": "Robert Johnson Inc",
+        "sector": "Rocks",
         "releaseYear": "1961",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Stevie Ray Vaughan",
-        "title": "Texas Flood",
+        "name": "Stevie Ray Vaughan Inc",
+        "sector": "Agriculture",
         "releaseYear": "1983",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     },
     {
         "_class": "org.cloudfoundry.samples.music.domain.Album",
-        "artist": "Stevie Ray Vaughan",
-        "title": "Couldn't Stand The Weather",
+        "name": "Stevie Ray Vaughan Inc",
+        "sector": "Agricaulture",
         "releaseYear": "1984",
-        "genre": "Blues"
+        "rating": "AAA",
+        "loanCount": 7
     }
 ]
