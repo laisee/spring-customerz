@@ -10,29 +10,29 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="album in albums | orderBy:sortField:sortDescending">
+        <tr ng-repeat="customer in customers | orderBy:sortField:sortDescending">
             <td>
-                <in-place-edit field-name='name' input-type='name' input-class='input-large' model=album>{{album.name}}</in-place-edit>
+                <in-place-edit field-name='name' input-type='name' input-class='input-large' model=customer>{{customer.name}}</in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='sector' input-type='text' input-class='input-large' model=album>{{album.sector}}</in-place-edit>
+                <in-place-edit field-name='sector' input-type='text' input-class='input-large' model=customer>{{customer.sector}}</in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='releaseYear' input-type='text' input-class='input-small' model=album>{{album.releaseYear}}</in-place-edit>
+                <in-place-edit field-name='releaseYear' input-type='text' input-class='input-small' model=customer>{{customer.releaseYear}}</in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='rating' input-type='text' input-class='input-medium' model=album>{{album.rating}}</in-place-edit>
+                <in-place-edit field-name='rating' input-type='text' input-class='input-medium' model=customer>{{customer.rating}}</in-place-edit>
             </td>
             <td>
-                <in-place-edit field-name='loanCount' input-type='text' input-class='input-medium' model=album>{{album.loanCount}}</in-place-edit>
+                <in-place-edit field-name='loanCount' input-type='text' input-class='input-medium' model=customer>{{customer.loanCount}}</in-place-edit>
             </td>
             <td class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <li role="presentation"><a ng-click="updateAlbum(album)">edit</a></li>
-                    <li role="presentation"><a ng-click="deleteAlbum(album)">delete</a></li>
+                    <li role="presentation"><a ng-click="updateCustomer(customer)">edit</a></li>
+                    <li role="presentation"><a ng-click="deleteCustomer(customer)">delete</a></li>
                 </ul>
             </td>
         </tr>

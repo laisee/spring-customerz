@@ -1,9 +1,9 @@
-angular.module('albums', ['ngResource', 'ui.bootstrap']).
-    factory('Albums', function ($resource) {
-        return $resource('albums');
+angular.module('customers', ['ngResource', 'ui.bootstrap']).
+    factory('Customers', function ($resource) {
+        return $resource('customers');
     }).
-    factory('Album', function ($resource) {
-        return $resource('albums/:id', {id: '@id'});
+    factory('Customer', function ($resource) {
+        return $resource('customers/:id', {id: '@id'});
     }).
     factory("EditorStatus", function () {
         var editorEnabled = {};
@@ -27,17 +27,17 @@ angular.module('albums', ['ngResource', 'ui.bootstrap']).
         }
     });
 
-function AlbumsController($scope, $modal, Albums, Album, Status) {
+function CustomersController($scope, $modal, Customers, Customer, Status) {
     function list() {
-        $scope.albums = Albums.query();
+        $scope.customers = Customers.query();
     }
 
     function clone (obj) {
         return JSON.parse(JSON.stringify(obj));
     }
 
-    function saveAlbum(album) {
-        Albums.save(album,
+    function saveCustomer(customer) {
+        Customers.save(customer,
             function () {
                 Status.success("Customer saved");
                 list();
@@ -48,12 +48,12 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
         );
     }
 
-    $scope.addAlbum = function () {
+    $scope.addCustomer = function () {
         var addModal = $modal.open({
-            templateUrl: 'templates/albumForm.html',
-            controller: AlbumModalController,
+            templateUrl: 'templates/customerForm.html',
+            controller: CustomerModalController,
             resolve: {
-                album: function () {
+                customer: function () {
                     return {};
                 },
                 action: function() {
@@ -62,18 +62,18 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
             }
         });
 
-        addModal.result.then(function (album) {
-            saveAlbum(album);
+        addModal.result.then(function (customer) {
+            saveCustomer(customer);
         });
     };
 
-    $scope.updateAlbum = function (album) {
+    $scope.updateCustomer = function (customer) {
         var updateModal = $modal.open({
-            templateUrl: 'templates/albumForm.html',
-            controller: AlbumModalController,
+            templateUrl: 'templates/customerForm.html',
+            controller: CustomerModalController,
             resolve: {
-                album: function() {
-                    return clone(album);
+                customer: function() {
+                    return clone(customer);
                 },
                 action: function() {
                     return 'update';
@@ -81,13 +81,13 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
             }
         });
 
-        updateModal.result.then(function (album) {
-            saveAlbum(album);
+        updateModal.result.then(function (customer) {
+            saveCustomer(customer);
         });
     };
 
-    $scope.deleteAlbum = function (album) {
-        Album.delete({id: album.id},
+    $scope.deleteCustomer = function (customer) {
+        Customer.delete({id: customer.id},
             function () {
                 Status.success("Customer deleted");
                 list();
@@ -98,25 +98,25 @@ function AlbumsController($scope, $modal, Albums, Album, Status) {
         );
     };
 
-    $scope.setAlbumsView = function (viewName) {
-        $scope.albumsView = "templates/" + viewName + ".html";
+    $scope.setCustomersView = function (viewName) {
+        $scope.customersView = "templates/" + viewName + ".html";
     };
 
     $scope.init = function() {
         list();
-        $scope.setAlbumsView("grid");
+        $scope.setCustomersView("grid");
         $scope.sortField = "name";
         $scope.sortDescending = false;
     };
 }
 
-function AlbumModalController($scope, $modalInstance, album, action) {
-    $scope.albumAction = action;
+function CustomerModalController($scope, $modalInstance, customer, action) {
+    $scope.customerAction = action;
     $scope.yearPattern = /^[1-2]\d{3}$/;
-    $scope.album = album;
+    $scope.customer = customer;
 
     $scope.ok = function () {
-        $modalInstance.close($scope.album);
+        $modalInstance.close($scope.customer);
     };
 
     $scope.cancel = function () {
@@ -124,28 +124,28 @@ function AlbumModalController($scope, $modalInstance, album, action) {
     };
 };
 
-function AlbumEditorController($scope, Albums, Status, EditorStatus) {
-    $scope.enableEditor = function (album, fieldName) {
-        $scope.newFieldValue = album[fieldName];
-        EditorStatus.enable(album.id, fieldName);
+function CustomerEditorController($scope, Customers, Status, EditorStatus) {
+    $scope.enableEditor = function (customer, fieldName) {
+        $scope.newFieldValue = customer[fieldName];
+        EditorStatus.enable(customer.id, fieldName);
     };
 
     $scope.disableEditor = function () {
         EditorStatus.disable();
     };
 
-    $scope.isEditorEnabled = function (album, fieldName) {
-        return EditorStatus.isEnabled(album.id, fieldName);
+    $scope.isEditorEnabled = function (customer, fieldName) {
+        return EditorStatus.isEnabled(customer.id, fieldName);
     };
 
-    $scope.save = function (album, fieldName) {
+    $scope.save = function (customer, fieldName) {
         if ($scope.newFieldValue === "") {
             return false;
         }
 
-        album[fieldName] = $scope.newFieldValue;
+        customer[fieldName] = $scope.newFieldValue;
 
-        Albums.save({}, album,
+        Customers.save({}, customer,
             function () {
                 Status.success("Customer saved");
                 list();
@@ -161,7 +161,7 @@ function AlbumEditorController($scope, Albums, Status, EditorStatus) {
     $scope.disableEditor();
 }
 
-angular.module('albums').
+angular.module('customers').
     directive('inPlaceEdit', function () {
         return {
             restrict: 'E',
@@ -194,6 +194,6 @@ angular.module('albums').
                     '</span>' +
                 '</div>',
 
-            controller: 'AlbumEditorController'
+            controller: 'CustomerEditorController'
         };
     });

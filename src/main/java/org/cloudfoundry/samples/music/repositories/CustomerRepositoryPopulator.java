@@ -2,7 +2,7 @@ package org.cloudfoundry.samples.music.repositories;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.cloudfoundry.samples.music.domain.Album;
+import org.cloudfoundry.samples.music.domain.Customer;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.context.ApplicationContext;
@@ -18,17 +18,17 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 
 @Component
-public class AlbumRepositoryPopulator implements ApplicationListener<ContextRefreshedEvent>, ApplicationContextAware {
+public class CustomerRepositoryPopulator implements ApplicationListener<ContextRefreshedEvent>, ApplicationContextAware {
     private final Jackson2ResourceReader resourceReader;
     private final Resource sourceData;
 
     private ApplicationContext applicationContext;
 
-    public AlbumRepositoryPopulator() {
+    public CustomerRepositoryPopulator() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         resourceReader = new Jackson2ResourceReader(mapper);
-        sourceData = new ClassPathResource("albums.json");
+        sourceData = new ClassPathResource("customers.json");
     }
 
     @Override
@@ -39,11 +39,11 @@ public class AlbumRepositoryPopulator implements ApplicationListener<ContextRefr
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (event.getApplicationContext().equals(applicationContext)) {
-            CrudRepository albumRepository =
+            CrudRepository customerRepository =
                     BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext, CrudRepository.class);
 
-            if (albumRepository != null && albumRepository.count() == 0) {
-                populate(albumRepository);
+            if (customerRepository != null && customerRepository.count() == 0) {
+                populate(customerRepository);
             }
         }
 
@@ -54,9 +54,9 @@ public class AlbumRepositoryPopulator implements ApplicationListener<ContextRefr
         Object entity = getEntityFromResource(sourceData);
 
         if (entity instanceof Collection) {
-            for (Album album : (Collection<Album>) entity) {
-                if (album != null) {
-                    repository.save(album);
+            for (Customer customer : (Collection<Customer>) entity) {
+                if (customer != null) {
+                    repository.save(customer);
                 }
             }
         } else {

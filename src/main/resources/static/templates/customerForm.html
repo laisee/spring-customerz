@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h3 ng-show="customerAction === 'add'">Add new Customer</h3>
+    <h3 ng-show="customerAction === 'update'">Edit a Customer</h3>
+</div>
+<div class="modal-body">
+    <form name="customerForm" role="form">
+        <div class="form-group has-feedback" ng-class="{'has-warning': customerForm.sector.$invalid, 'has-success': customerForm.sector.$valid}">
+            <label for="sector">Name</label>
+            <input type="text" class="form-control input-large" id="sector" name="sector" required ng-model="customer.sector">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': customerForm.sector.$invalid, 'glyphicon-ok': customerForm.sector.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': customerForm.name.$invalid, 'has-success': customerForm.name.$valid}">
+            <label for="name">Sector</label>
+            <input type="text" class="form-control input-large" id="name" name="name" required ng-model="customer.name">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': customerForm.name.$invalid, 'glyphicon-ok': customerForm.name.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': customerForm.releaseYear.$invalid, 'has-success': customerForm.releaseYear.$valid}">
+            <label for="releaseYear">Customer Since</label>
+            <input type="text" class="form-control input-small" id="releaseYear" name="releaseYear" required ng-model="customer.releaseYear" ng-pattern=yearPattern>
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': customerForm.releaseYear.$invalid, 'glyphicon-ok': customerForm.releaseYear.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': customerForm.rating.$invalid, 'has-success': customerForm.rating.$valid}">
+            <label for="rating">Rating</label>
+            <input type="text" class="form-control input-medium" id=rating name="rating" required ng-model="customer.rating">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': customerForm.rating.$invalid, 'glyphicon-ok': customerForm.rating.$valid}"></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{'has-warning': customerForm.loanCount.$invalid, 'has-success': customerForm.loanCount.$valid}">
+            <label for="loanCount">Loans</label>
+            <input type="text" class="form-control input-medium" id=loanCount name="loanCount" required ng-model="customer.loanCount">
+            <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-warning-sign': customerForm.loanCount.$invalid, 'glyphicon-ok': customerForm.loanCount.$valid}"></span>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-md active" ng-disabled="customerForm.$invalid" ng-click="ok()" >OK</button>
+    <button class="btn btn-warning btn-md active" ng-click="cancel()">Cancel</button>
+</div>

@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Album {
+public class Customer {
     @Id
     @Column(length=40)
     @GeneratedValue(generator="randomId")
@@ -20,12 +20,12 @@ public class Album {
     private String releaseYear;
     private String rating;
     private int loanCount;
-    private String albumId;
+    private String customerId;
 
-    public Album() {
+    public Customer() {
     }
 
-    public Album(String sector, String name, String releaseYear, String rating) {
+    public Customer(String sector, String name, String releaseYear, String rating) {
         this.sector = sector;
         this.name = name;
         this.releaseYear = releaseYear;
@@ -81,11 +81,11 @@ public class Album {
         this.loanCount = loanCount;
     }
 
-    public String getAlbumId() {
-        return albumId;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setAlbumId(String albumId) {
-        this.albumId = albumId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 }

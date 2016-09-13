@@ -1,10 +1,10 @@
-<div id="albums" ng-init="init()">
+<div id="customers" ng-init="init()">
     <div class="page-header">
         <h1>Customers</h1>
         <div>
             <span> [ view as: </span>
-            <a href="" ng-click="setAlbumsView('grid')"><span class="glyphicon glyphicon-th"></span></a>
-            <a href="" ng-click="setAlbumsView('list')"><span class="glyphicon glyphicon-th-list"></span></a>
+            <a href="" ng-click="setCustomersView('grid')"><span class="glyphicon glyphicon-th"></span></a>
+            <a href="" ng-click="setCustomersView('list')"><span class="glyphicon glyphicon-th-list"></span></a>
             <span> | sort by: </span>
             <a href="" ng-click="sortField='sector'">Sector</a>
             <a href="" ng-click="sortField='name'">Name</a>
@@ -14,7 +14,7 @@
                 <span class="glyphicon" ng-class="{'glyphicon-chevron-up' : !sortDescending, 'glyphicon-chevron-down' : sortDescending}"></span>
             </a>
             <span> | </span>
-            <a href="" ng-click="addAlbum()"><span class="glyphicon glyphicon-plus"></span>add customer</a>
+            <a href="" ng-click="addCustomer()"><span class="glyphicon glyphicon-plus"></span>add customer</a>
             <span> ] </span>
         </div>
     </div>
@@ -24,6 +24,6 @@
     </div>
 
     <div class="row multi-columns-row">
-        <div ng-include src="albumsView"></div>
+        <div ng-include src="customersView"></div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 package org.cloudfoundry.samples.music.config.data;
 
-import org.cloudfoundry.samples.music.domain.Album;
-import org.cloudfoundry.samples.music.repositories.redis.RedisAlbumRepository;
+import org.cloudfoundry.samples.music.domain.Customer;
+import org.cloudfoundry.samples.music.repositories.redis.RedisCustomerRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -16,23 +16,23 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
     @Bean
-    public RedisAlbumRepository redisRepository(RedisTemplate<String, Album> redisTemplate) {
-        return new RedisAlbumRepository(redisTemplate);
+    public RedisCustomerRepository redisRepository(RedisTemplate<String, Customer> redisTemplate) {
+        return new RedisCustomerRepository(redisTemplate);
     }
 
     @Bean
-    public RedisTemplate<String, Album> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
-        RedisTemplate<String, Album> template = new RedisTemplate<>();
+    public RedisTemplate<String, Customer> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        RedisTemplate<String, Customer> template = new RedisTemplate<>();
 
         template.setConnectionFactory(redisConnectionFactory);
 
         RedisSerializer<String> stringSerializer = new StringRedisSerializer();
-        RedisSerializer<Album> albumSerializer = new Jackson2JsonRedisSerializer<>(Album.class);
+        RedisSerializer<Customer> customerSerializer = new Jackson2JsonRedisSerializer<>(Customer.class);
 
         template.setKeySerializer(stringSerializer);
-        template.setValueSerializer(albumSerializer);
+        template.setValueSerializer(customerSerializer);
         template.setHashKeySerializer(stringSerializer);
-        template.setHashValueSerializer(albumSerializer);
+        template.setHashValueSerializer(customerSerializer);
 
         return template;
     }
